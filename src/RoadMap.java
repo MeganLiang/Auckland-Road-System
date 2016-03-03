@@ -30,9 +30,11 @@ public class RoadMap extends GUI{
     protected void onMove(Move m) {
     }
 
-    protected void onLoad(File nodes, File roads, File segments,
-                          File polygons){
-
+    protected void onLoad(File nodes, File roads, File segment, File polygons){
+        loadNodes(nodes);
+        loadRoads(roads);
+        loadSeg(segment);
+        System.out.println("Loaded files");
     }
 
     public void loadNodes (File f){
@@ -142,6 +144,9 @@ public class RoadMap extends GUI{
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public static void main(String[] args) {
+        new RoadMap();
     }
 
 }
